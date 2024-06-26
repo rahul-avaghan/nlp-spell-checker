@@ -3,10 +3,12 @@ from werkzeug.utils import secure_filename
 import os
 from textblob import TextBlob
 import io
+from flask_cors import CORS
 
 UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'txt'}
 app = Flask(__name__)
+CORS(app)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
