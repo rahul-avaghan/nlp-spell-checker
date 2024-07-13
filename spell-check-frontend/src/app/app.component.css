@@ -1,23 +1,60 @@
+/* Center the container vertically and horizontally */
 .center-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Adjust as needed based on your layout requirements */
-  }
-  
-  .spellcheck_container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ccc;
-    padding: 20px;
-    width: 300px; /* Adjust width as needed */
-  }
-  
-  .spellcheck_container input[type="text"],
-  .spellcheck_container label,
-  .spellcheck_container input[type="file"] {
-    margin-bottom: 10px;
-  }
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Full height of viewport */
+  background-color: #f0f0f0; /* Light background color */
+}
+
+/* Style the inner container */
+.spellcheck-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  width: 300px; /* Width of the container */
+  background-color: #ffffff; /* White background */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Input fields */
+.spellcheck-container input[type="text"],
+.spellcheck-container input[type="file"] {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box; /* Ensure padding and border are included in width */
+}
+
+/* Label styles */
+.spellcheck-container label {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* Input focus styles */
+.spellcheck-container input:focus {
+  outline: none;
+  border-color: #66afe9; /* Light blue outline on focus */
+}
+
+/* File input label styles */
+.spellcheck-container input[type="file"] + label {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* File input label hover effect */
+.spellcheck-container input[type="file"]:hover + label {
+  color: #007bff; /* Blue color on hover */
+  cursor: pointer;
+}

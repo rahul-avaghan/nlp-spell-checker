@@ -1,10 +1,11 @@
 <div class="center-container">
-    <div class="spellcheck_container">
-      <input type="text" (input)="onInput($event)" placeholder="Type something...">
-      <label>{{ outputWord }}</label>
-      <input type="file" (change)="fileChangeEvent($event)">
-      <label>{{uploadResult}}</label>
-    </div>
+  <div class="spellcheck-container">
+    <input type="text" (input)="onInput($event)" placeholder="Type something...">
+    <label>{{ outputWord }}</label>
+    <input type="file" (change)="fileChangeEvent($event)">
+    <label>{{ uploadResult }}</label>
   </div>
+</div>
+
   
 
