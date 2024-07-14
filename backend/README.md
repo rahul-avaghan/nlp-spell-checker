@@ -17,7 +17,7 @@ python -m venv .venv
 * Install dependencies
 
 ```
-pip install flask , textblob , autocorrect
+pip install flask pandas pyspellchecker
 ```
 * Run the app
 ```
@@ -28,23 +28,18 @@ flask --app app run --port 8000 --debugger
 Request**
 1. spellcheck
 ```
-curl --location --request POST 'http://localhost:8000/spellcheck' \
---header 'Content-Type: application/json' \
---data-raw '{
-    "text": "spell chec"
-}'
+curl -X POST -H "Content-Type: application/json" -d '{"text": "Thiss iss a testt."}' http://localhost:5000/correct
 ```
 Response
 ```
 {
-    "corrected_text": "spell check",
-    "original_text": "spell chec"
+  "corrected_text": "this is a test"
 }
+
 ```
 
 2.For uploading file
 
 ```
-curl --location --request POST 'http://127.0.0.1:8000/upload' \
---form 'file=@"/Users/rahulavaghan/Desktop/y.txt"'
+curl -X POST -F "file=@path/to/your/file.txt" http://localhost:5000/upload
 ```
